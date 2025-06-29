@@ -1,0 +1,56 @@
+# Docker
+.dockerignore
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Docker volumes
+volumes/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Docker Compose override
+docker-compose.override.yml
+docker-compose.local.yml
+
+# Python compiled files (in case of any root Python scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Node modules (frontend)
+node_modules/
+
+# Build artifacts
+dist/
+build/
