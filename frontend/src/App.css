@@ -1,0 +1,255 @@
+/* App layout */
+.App {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Navbar styling */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+/* Card improvements */
+.custom-card {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+/* Force full width for all major components */
+.card, .custom-card {
+  width: 100%;
+  max-width: none;
+}
+
+.form-control, .custom-textarea {
+  width: 100%;
+}
+
+.tab-content {
+  width: 100%;
+}
+
+.nav-pills {
+  width: 100%;
+}
+
+/* Full width layouts for all large screens */
+@media (min-width: 992px) {
+  .wide-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+    max-width: none;
+  }
+  
+  .wide-layout .form-section {
+    grid-column: 1;
+  }
+  
+  .wide-layout .result-section {
+    grid-column: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wide-layout {
+    gap: 3rem;
+  }
+}
+
+/* Fallback for smaller screens */
+@media (max-width: 991px) {
+  .wide-layout .result-section {
+    margin-top: 2rem;
+  }
+}
+
+/* Form improvements for desktop */
+.form-row-desktop {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .form-row-desktop {
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-row-desktop {
+    gap: 2rem;
+  }
+}
+
+.form-col-desktop {
+  flex: 1;
+  min-width: 200px;
+}
+
+@media (min-width: 1200px) {
+  .form-col-desktop {
+    min-width: 250px;
+  }
+}
+
+/* Textarea improvements */
+.custom-textarea {
+  min-height: 120px;
+}
+
+@media (min-width: 768px) {
+  .custom-textarea {
+    min-height: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-textarea {
+    min-height: 200px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .custom-textarea {
+    min-height: 250px;
+  }
+}
+
+/* Image preview improvements for large screens */
+.image-preview {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 1200px) {
+  .image-preview {
+    max-height: 400px;
+    object-fit: contain;
+  }
+}
+
+@media (min-width: 1400px) {
+  .image-preview {
+    max-height: 500px;
+  }
+}
+
+/* Tab navigation improvements */
+.nav-pills .nav-link {
+  font-weight: 500;
+  border-radius: 0.5rem;
+  margin: 0 0.25rem;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #0d6efd;
+}
+
+/* Result section positioning */
+.result-section {
+  position: sticky;
+  top: 2rem;
+}
+
+/* Button improvements */
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .action-buttons {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+/* Welcome screen styles */
+.welcome-screen {
+  padding: 2rem 0;
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+
+.service-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 300px;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border-color: #007bff;
+}
+
+.service-icon {
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.welcome-card h1 {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.welcome-card .lead {
+  color: #6c757d;
+  font-size: 1.25rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 1200px) {
+  .welcome-screen {
+    padding: 3rem 0;
+  }
+  
+  .service-card {
+    min-height: 350px;
+  }
+  
+  .service-icon {
+    font-size: 5rem;
+  }
+}
+
+/* Enhanced padding for large screens */
+@media (min-width: 1400px) {
+  .px-xl-6 {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
+  }
+}
+
+@media (min-width: 1600px) {
+  .px-xl-6 {
+    padding-left: 6rem !important;
+    padding-right: 6rem !important;
+  }
+}
+
+@media (min-width: 1920px) {
+  .px-xl-6 {
+    padding-left: 8rem !important;
+    padding-right: 8rem !important;
+  }
+}

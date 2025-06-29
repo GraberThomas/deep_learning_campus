@@ -1,0 +1,49 @@
+services:
+  text-summarize:
+    build:
+      context: ./text_summarize
+      dockerfile: Dockerfile
+    # Remove port mapping - only accessible within Docker network
+    container_name: text-summarize-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  style-transfer:
+    build:
+      context: ./style_transfer
+      dockerfile: Dockerfile
+    # Remove port mapping - only accessible within Docker network
+    container_name: style-transfer-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  text-complete:
+    build:
+      context: ./text-complete
+      dockerfile: Dockerfile
+    # Remove port mapping - only accessible within Docker network
+    container_name: text-complete-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    container_name: deep-learning-frontend
+    restart: unless-stopped
+    depends_on:
+      - text-summarize
+      - style-transfer
+      - text-complete
+    networks:
+      - deep-learning-network
+
+networks:
+  deep-learning-network:
+    driver: bridge
