@@ -3,7 +3,6 @@ services:
     build:
       context: ./text_summarize
       dockerfile: Dockerfile
-    # Remove port mapping - only accessible within Docker network
     container_name: text-summarize-api
     restart: unless-stopped
     networks:
@@ -13,7 +12,6 @@ services:
     build:
       context: ./style_transfer
       dockerfile: Dockerfile
-    # Remove port mapping - only accessible within Docker network
     container_name: style-transfer-api
     restart: unless-stopped
     networks:
@@ -23,7 +21,6 @@ services:
     build:
       context: ./text-complete
       dockerfile: Dockerfile
-    # Remove port mapping - only accessible within Docker network
     container_name: text-complete-api
     restart: unless-stopped
     networks:
