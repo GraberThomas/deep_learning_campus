@@ -1,0 +1,38 @@
+services:
+  text-summarize:
+    image: tgraber310/deep_learning-text-summarize
+    container_name: text-summarize-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  style-transfer:
+    image: tgraber310/deep_learning-style-transfer
+    container_name: style-transfer-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  text-complete:
+    image: tgraber310/deep_learning-text-complete
+    container_name: text-complete-api
+    restart: unless-stopped
+    networks:
+      - deep-learning-network
+
+  frontend:
+    image: tgraber310/deep_learning-frontend
+    ports:
+      - "80:80"
+    container_name: deep-learning-frontend
+    restart: unless-stopped
+    depends_on:
+      - text-summarize
+      - style-transfer
+      - text-complete
+    networks:
+      - deep-learning-network
+
+networks:
+  deep-learning-network:
+    driver: bridge
